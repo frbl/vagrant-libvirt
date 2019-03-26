@@ -218,11 +218,15 @@ module VagrantPlugins
                   video_model = REXML::Element.new('model', REXML::XPath.first(xml_descr, '/domain/devices/video'))
                   video_model.attributes['type'] = config.video_type
                   video_model.attributes['vram'] = config.video_vram
+                  video_model.attributes['heads'] = config.video_heads
                 else
-                  if video_model.attributes['type'] != config.video_type || video_model.attributes['vram'] != config.video_vram
+                  if video_model.attributes['type'] != config.video_type || 
+                      video_model.attributes['vram'] != config.video_vram ||
+                      video_model.attributes['heads'] != config.video_heads
                     descr_changed = true
                     video_model.attributes['type'] = config.video_type
                     video_model.attributes['vram'] = config.video_vram
+                    video_model.attributes['heads'] = config.video_heads
                   end
                 end
               end

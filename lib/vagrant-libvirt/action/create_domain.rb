@@ -69,6 +69,7 @@ module VagrantPlugins
           @video_type = config.video_type
           @sound_type = config.sound_type
           @video_vram = config.video_vram
+          @video_heads = config.video_heads
           @keymap = config.keymap
           @kvm_hidden = config.kvm_hidden
 
